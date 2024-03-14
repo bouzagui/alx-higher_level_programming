@@ -1,3 +1,3 @@
-## Learning Python
+# Learning Python
 
-# The first time LEEEET'S GOOOOO
+## The first time LEEEET'S GOOOOO
