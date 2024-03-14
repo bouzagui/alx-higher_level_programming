@@ -3,4 +3,4 @@ for i in range(25, -1, -1):
     memory = i + 65
     if i % 2 == 1:
         memory = memory + 32
-    print(f"{chr(memory)}", end="")
+    print("{:memory}".format(memory), end="")
