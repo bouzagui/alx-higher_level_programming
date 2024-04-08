@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+find the area and perimeter of a rectangle
+"""
 class Rectangle:
     """empty class that defines a rectangle"""
     def __init__(self, width=0, height=0):
