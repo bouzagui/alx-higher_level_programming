@@ -1,0 +1,25 @@
+Testing with valid inputs:
+>>> print_square(3)
+###
+###
+###
+
+Testing with invalid inputs:
+
+Size not provided:
+>>> print_square()
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Size is a string:
+>>> print_square("3")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+Size is negative:
+>>> print_square(-3)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0

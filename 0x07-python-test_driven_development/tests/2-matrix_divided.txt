@@ -1,0 +1,41 @@
+Testing with valid inputs:
+>>> matrix_divided([[1, 2], [3, 4]], 2)
+[[0.5, 1.0], [1.5, 2.0]]
+
+Testing with division by zero:
+>>> matrix_divided([[1, 2], [3, 4]], 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+Testing with invalid inputs:
+
+Matrix not provided:
+>>> matrix_divided([], 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix not a list of lists:
+>>> matrix_divided([1, 2], 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix containing non-numeric values:
+>>> matrix_divided([[1, 'a'], [3, 4]], 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix rows of different lengths:
+>>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+Divisor not a number:
+>>> matrix_divided([[1, 2], [3, 4]], 'a')
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
