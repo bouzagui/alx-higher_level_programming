@@ -1,13 +1,14 @@
-""" My class that implements """
+#!/usr/bin/python3
+"""
+My class that implements
+"""
+
 
 
 class MyList(list):
     """
-    My class
+    sort a list
     """
 
     def print_sorted(self):
-        """
-        Prints the list in sorted order
-        """
         print(sorted(self))
