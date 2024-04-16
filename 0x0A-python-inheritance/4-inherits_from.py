@@ -2,7 +2,6 @@
 """ defined a function that returns a string """
 
 
-def is_same_class(obj, a_class):
+def inherits_from(obj, a_class):
     """ returns True if obj is a class of a given class """
-
-    return type(obj).__name__ == a_class.__name__
+    return isinstance(obj, a_class) and not type(obj) is a_class
