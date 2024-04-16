@@ -4,7 +4,6 @@ My class that implements
 """
 
 
-
 class MyList(list):
     """
     sort a list
