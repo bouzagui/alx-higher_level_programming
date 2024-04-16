@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-""" defined a class """
+""" Class MyInt inherits from int with inverted == and != operators. """
 
-class MyInt:
-    """ class """
-    def __init__(self, value):
-        return super().__ne__(value)
-    
-    def __ne__(self, value):
-        return super().__init__(value)
+
+class MyInt(int):
+    """ class MyInt """
+    def __eq__(self, other):
+        return super().__ne__(other)
+
+    def __ne__(self, other):
+        return super().__eq__(other)
