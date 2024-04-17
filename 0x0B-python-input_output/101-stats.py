@@ -1,40 +1,38 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-"""Print stats module"""
+""" importing """
 import sys
+from collections import defaultdict
 
+def print_metrics(total_file_size, status_code_count):
+    """ print metrics """
+    print("File size: {}".format(total_file_size))
+    for status_code, count in sorted(status_code_count.items()):
+        print("{}: {}".format(status_code, count))
 
-def print_stats(total_size, status_codes):
-    """
-    Print statistics.
-    """
-    print("File size: {}".format(total_size))
-    for code in sorted(status_codes):
-        print("{}: {}".format(code, status_codes[code]))
-
-
-if __name__ == "__main__":
-    total_size = 0
-    status_codes = {
-         '200': 0, '301': 0, '400': 0, '401': 0,
-         '403': 0, '404': 0, '405': 0, '500': 0
-     }
+def main():
+    """ run the command """
+    total_file_size = 0
+    status_code_count = defaultdict(int)
     line_count = 0
 
     try:
         for line in sys.stdin:
-            parts = line.split()
-            if len(parts) > 2:
-                total_size += int(parts[-1])
-                status_code = parts[-2]
-                if status_code in status_codes:
-                    status_codes[status_code] += 1
+            try:
+                ip, _, _, status_code_str, file_size_str = line.split()[:5]
+                status_code = int(status_code_str)
+                file_size = int(file_size_str)
+                total_file_size += file_size
+                status_code_count[status_code] += 1
+                line_count += 1
 
-            line_count += 1
+                if line_count % 10 == 0:
+                    print_metrics(total_file_size, status_code_count)
 
-            if line_count % 10 == 0:
-                print_stats(total_size, status_codes)
+            except ValueError:
+                pass
 
     except KeyboardInterrupt:
-        print_stats(total_size, status_codes)
-        raise
+        print_metrics(total_file_size, status_code_count)
+
+if __name__ == "__main__":
+    main()
