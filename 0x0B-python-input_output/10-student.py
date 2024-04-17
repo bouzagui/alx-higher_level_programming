@@ -9,9 +9,8 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
+
     def to_json(self, attrs=None):
-        """ Convert a student to JSON
-        """
         if isinstance(attrs, list):
             if all(isinstance(attr, str) for attr in attrs):
                 reserved = {}
@@ -20,4 +19,3 @@ class Student:
                         reserved[attr] = getattr(self, attr)
                 return reserved
         return self.__dict__
- 
