@@ -2,6 +2,7 @@
 """ module for creating and updating objects from different sources """
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     arguments for creating and updating objects from different sources
@@ -14,7 +15,6 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-
     def width(self):
         """ returns the width of attribute"""
         return self.__width
@@ -26,6 +26,7 @@ class Rectangle(Base):
             raise TypeError('width must be an integer')
         if value <= 0:
             raise ValueError('width must be > 0')
+        self.__width = value
 
     @property
     def height(self):
