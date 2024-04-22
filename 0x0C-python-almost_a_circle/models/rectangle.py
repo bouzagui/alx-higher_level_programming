@@ -3,7 +3,9 @@
 from models.base import Base
 
 class Rectangle(Base):
-    """ documentation """
+    """
+    arguments for creating and updating objects from different sources
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.__width = width
         self.__height = height
@@ -44,10 +46,11 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """ sets the x coordinate to the value of the current value """
+        """ documents attribute """
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
-        self.__x = value
     
     @property
     def y(self):
@@ -56,9 +59,10 @@ class Rectangle(Base):
     
     @y.setter
     def y(self, value):
+        """ documents attribute """
         if value < 0:
-            raise ValueError('y must be >= 0')
-        self.__y = value
-
+            raise ValueError("y must be >= 0")
+    
     def area(self):
+        """ returns the area of the rectangle """
         return self.__width * self.__height
