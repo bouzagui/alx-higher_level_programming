@@ -12,19 +12,43 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
         super().__init__(id)
-
-    @property
-    def width(self):
-        return self.__width
     
     @property
+    def width(self):
+        """ returns the width of attribute"""
+        return self.__width
+    
+    @width.setter
+    def width(self, value):
+        """ doct """
+        self.__width = value
+
+    @property
     def height(self):
+        """ returns the height of attribute"""
         return self.__height
+    
+    @height.setter
+    def height(self, value):
+        """ doct """
+        self.__height = value
     
     @property
     def x(self):
+        """ returns the x of attribute"""
         return self.__x
-    
+
+    @x.setter
+    def x(self, value):
+        """ doct """
+        self.__x = value
+
     @property
     def y(self):
+        """ returns the y of attribute"""
         return self.__y
+
+    @y.setter
+    def y(self, value):
+        """ doct """
+        self.__y = value
