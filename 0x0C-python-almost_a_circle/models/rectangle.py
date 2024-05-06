@@ -15,39 +15,39 @@ class Rectangle(Base):
     @property
     def width(self):
         '''get the width'''
-        return self.__width
+        return self.width
 
     @width.setter
     def width(self, value):
         '''set width value'''
-        self.__width = value
+        self.width = value
 
     @property
     def height(self):
         ''' get height '''
-        return self.__height
+        return self.height
 
     @height.setter
     def height(self, value):
         '''set height value'''
-        self.__height = value
+        self.height = value
 
     @property
     def x(self):
         ''' get x '''
-        return self.__x
+        return self.x
 
     @x.setter
     def x(self, value):
         ''' set x value '''
-        self.__x = value
+        self.x = value
 
     @property
     def y(self):
         ''' get y '''
-        return self.__y
+        return self.y
 
     @y.setter
     def width(self, value):
         ''' set y value '''
-        self.__y = value
+        self.y = value
