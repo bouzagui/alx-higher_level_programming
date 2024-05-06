@@ -10,8 +10,6 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         elif not isinstance(height, int) or height <= 0:
             raise TypeError("height must be an integer")
-        if y <= 0:
-            raise ValueError("y must be >= 0")
         self.__width = width
         self.__height = height
         self.__x = x
