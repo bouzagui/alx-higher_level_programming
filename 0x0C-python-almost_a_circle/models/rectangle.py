@@ -6,9 +6,9 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        if not isinstance(width, int) or width <= 0:
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-        elif not isinstance(height, int) or height <= 0:
+        elif not isinstance(height, int):
             raise TypeError("height must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
