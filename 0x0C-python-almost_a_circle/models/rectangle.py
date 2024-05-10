@@ -11,6 +11,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+
     @property
     def width(self):
         """get the width"""
@@ -78,4 +79,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """update rectangle"""
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+        return (
+            f"[Rectangle] ({self.id})"
+            f"{self.x}/{self.y} - {self.width}/{self.height}"
+        )
