@@ -7,8 +7,10 @@ class Rectangle {
     }
   }
   print() {
-    for (let i = 0; i < this.height; i++) {
-      console.log('x'.repeat(this.width))
+    if (this.width != NaN && this.height != NaN){
+        for (let i = 0; i < this.height; i++) {
+          console.log('x'.repeat(this.width))
+      }
     }
   }
 }
