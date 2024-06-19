@@ -8,7 +8,7 @@ class Rectangle {
   }
 
   print () {
-    if (!isNaN(this.width) && !isNaN(this.height)) {
+    if (this.width && this.height) {
       for (let i = 0; i < this.width; i++) {
         console.log('X'.repeat(this.height));
       }
