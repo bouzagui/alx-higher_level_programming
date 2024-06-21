@@ -6,6 +6,6 @@ if (isNaN(number)) {
   console.log('not argument');
 } else {
   for (let i = 0; i < number; i++) {
-    console.log(Str.replace(i));
+    console.log(Str.replace(number));
   }
 }
