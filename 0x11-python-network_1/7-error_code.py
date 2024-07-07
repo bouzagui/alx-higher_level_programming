@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""models"""
+""" models """
 import requests
 import sys
 
